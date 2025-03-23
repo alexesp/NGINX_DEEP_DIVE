@@ -1,0 +1,40 @@
+﻿enents{}
+
+http{
+	include mime.types;
+	//types{
+		//text/html html;
+		//text/css css;
+		//}
+		server{
+		listen:80;
+		server_name localhost;   //192.168.00.05
+		
+		root /sites/demo;
+
+		#Prefix match  coincidencia prefija
+		location /greet{
+		return 200 'Hola from NGINX "/greet" location.';
+		}
+
+		#Preferential prefix match  coincidencia prefija preferente
+		location ^~ /greet{
+		return 200 'Hola from NGINX "/greet" location - PREFERENTIAL.';
+		}
+
+		#Exact match   coincidencia exacta
+		location = /greet{
+		return 200 'Hola from NGINX "/greet" location - EXACT MATCH.';
+		}
+
+		#REGEX match   coincidencia de expresiones regulares CASE SENSITIVO DISTINGUE MAYÚSCULAS Y MINÚSCULAS
+		location ~ /greet[0-9]{
+		return 200 'Hola from NGINX "/greet" location - REGEX MATCH SENSITIVO.';
+		}
+
+		#REGEX match   coincidencia de expresiones regulares  CASE INSENSITIVE  NO DISTINGUE ENTRE MAYÚSCULAS Y MINÚSCULAS
+		location ~* /greet[0-9]{
+		return 200 'Hola from NGINX "/greet" location - REGEX MATCH INSENSITIVE.';
+		}
+		}
+		}

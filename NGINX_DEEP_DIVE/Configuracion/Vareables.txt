@@ -1,0 +1,29 @@
+﻿enents{}
+
+http{
+	include mime.types;
+	//types{
+		//text/html html;
+		//text/css css;
+		//}
+		server{
+		listen:80;
+		server_name localhost;   //192.168.00.05
+		
+		root /sites/demo;
+
+		#Check stati API key
+
+		set $weekend 'No';
+
+
+		if( $arg_apikey != 1234 ){
+		return 401 "Incorrect API Key";
+		}
+		
+		location /inspect {
+		return 200 "Name: $arg_name";
+		}
+
+		}
+		}

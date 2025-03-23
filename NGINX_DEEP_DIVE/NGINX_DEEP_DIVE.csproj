@@ -35,5 +35,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Configuracion\Comandos.txt" />
+    <Content Include="Configuracion\Configuracion.txt" />
+    <Content Include="Configuracion\Vareables.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
