@@ -1,4 +1,4 @@
-﻿enents{}
+﻿events{}
 
 http{
 	include mime.types;
@@ -7,7 +7,7 @@ http{
 		//text/css css;
 		//}
 		server{
-		listen:80;
+		listen 80;
 		server_name localhost;   //192.168.00.05
 		
 		root /sites/demo;
@@ -16,14 +16,21 @@ http{
 
 		set $weekend 'No';
 
+		if( $data_local ~ 'Saturday|Sanday' ){
+		set $weekend 'Yes';
+		}
 
-		if( $arg_apikey != 1234 ){
-		return 401 "Incorrect API Key";
+		location /is_weekend {
+		return 200 $weekend;
 		}
+
+		#if( $arg_apikey != 1234 ){
+		#return 401 "Incorrect API Key";
+		#}
 		
-		location /inspect {
-		return 200 "Name: $arg_name";
-		}
+		#location /inspect {
+		#return 200 "Name: $arg_name";
+		#}
 
 		}
 		}

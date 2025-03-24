@@ -1,0 +1,21 @@
+﻿events{}
+
+http{
+	include mime.types;
+	
+		server{
+		listen 80;
+		server_name localhost;   //192.168.00.05
+		
+		root /sites/demo  /some/other/path;
+
+		location /secure{
+		access_log /var/log/nginx/secure.access.log;
+		access_log /var/log/nginx/access.log;
+		
+		return 200 "Welcome to secure area.";
+		}
+		
+
+		}
+		}

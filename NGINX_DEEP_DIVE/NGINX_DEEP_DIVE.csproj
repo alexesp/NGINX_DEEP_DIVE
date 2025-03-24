@@ -39,6 +39,9 @@
   <ItemGroup>
     <Content Include="Configuracion\Comandos.txt" />
     <Content Include="Configuracion\Configuracion.txt" />
+    <Content Include="Configuracion\Logging.txt" />
+    <Content Include="Configuracion\Redireccion.txt" />
+    <Content Include="Configuracion\ThryFiles.txt" />
     <Content Include="Configuracion\Vareables.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

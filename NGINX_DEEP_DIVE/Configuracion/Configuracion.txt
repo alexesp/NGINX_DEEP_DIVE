@@ -1,4 +1,4 @@
-﻿enents{}
+﻿events{}
 
 http{
 	include mime.types;
@@ -7,7 +7,7 @@ http{
 		//text/css css;
 		//}
 		server{
-		listen:80;
+		listen 80;
 		server_name localhost;   //192.168.00.05
 		
 		root /sites/demo;

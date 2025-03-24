@@ -1,2 +1,8 @@
 ﻿nginx -t
 systemctl reload nginx
+systemctl status nginx
+systemctl start nginx
+systemctl stop nginx
+systemctl is-active nginx
+systemctl --no-pager status nginx
+cat error.log
